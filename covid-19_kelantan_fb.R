@@ -5,19 +5,18 @@ library(rvest)
 library(stringr)
 library(xlsx)
 library(readxl)
-library(tesseract)
-library(magick)
 library(magrittr)
 library(stringr)
 
 # date
-my_date = Sys.Date()
+# my_date = Sys.Date()
 
 # Post ID
 # Must manually add the ID everyday, find from embed URL (right click date & copy url)
 # https://web.facebook.com/page/711798172246954/search/?q=jumlah%20kes%20sembuh%20(discaj)%20baharu
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 # jkn_url = ""; my_date = "2021-05-"
+# jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4004179083008830"; my_date = "2021-05-06"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4001165866643485"; my_date = "2021-05-05"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3998030013623737"; my_date = "2021-05-04"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3995395243887214"; my_date = "2021-05-03"
@@ -83,7 +82,8 @@ data_kel = data.frame(date=as.Date(my_date), recover=sembuh); data_kel
 # write.csv(data_kel, "covid-19_recover_kel.csv", row.names = F)  # init
 data_prev = read.csv("covid-19_recover_kel.csv")
 data_prev$date = as.Date(data_prev$date)
-data_kel_updated = rbind(data_kel, data_prev); data_kel_updated
+# data_kel_updated = rbind(data_kel, data_prev); data_kel_updated  # add prev date
+data_kel_updated = rbind(data_prev, data_kel); data_kel_updated  # add new date
 
 # Write
 write.csv(data_kel_updated, "covid-19_recover_kel.csv", row.names = F)
