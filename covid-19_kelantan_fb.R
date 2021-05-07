@@ -16,6 +16,7 @@ library(stringr)
 # https://web.facebook.com/page/711798172246954/search/?q=jumlah%20kes%20sembuh%20(discaj)%20baharu
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 # jkn_url = ""; my_date = "2021-05-"
+# jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4007248039368601"; my_date = "2021-05-07"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4004179083008830"; my_date = "2021-05-06"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4001165866643485"; my_date = "2021-05-05"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3998030013623737"; my_date = "2021-05-04"
