@@ -55,7 +55,6 @@ library(stringr)
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3901435533283186"; my_date = "2021-04-02"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3897856060307800"; my_date = "2021-04-01"
 
-
 # Read
 jkn_url = str_replace(jkn_url, "web", "m")  # replace web with m, easy to scrape
 jkn_page = try(read_html(jkn_url), T)
