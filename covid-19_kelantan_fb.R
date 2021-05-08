@@ -16,6 +16,7 @@ library(stringr)
 # https://web.facebook.com/page/711798172246954/search/?q=jumlah%20kes%20sembuh%20(discaj)%20baharu
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 # jkn_url = ""; my_date = "2021-05-"
+# jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4011095628983842"; my_date = "2021-05-08"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4007248039368601"; my_date = "2021-05-07"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4004179083008830"; my_date = "2021-05-06"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4001165866643485"; my_date = "2021-05-05"
@@ -76,7 +77,7 @@ loc1 = grep("Jumlah Kes Sembuh.*Baharu", my_text_split, ignore.case = T, perl = 
 # my_text_split[loc1]
 # my_text_split1 = str_split(my_text_split[loc1], "[:] ", simplify = T)
 my_text_split1 = str_split(my_text_split[loc1], "[:]", simplify = T)
-sembuh = as.numeric(my_text_split1[,2]); sembuh
+sembuh = as.numeric(my_text_split1[1,2]); sembuh
 
 # Read data
 data_kel = data.frame(date=as.Date(my_date), recover=sembuh); data_kel
