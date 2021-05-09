@@ -16,6 +16,7 @@ library(stringr)
 # https://web.facebook.com/page/711798172246954/search/?q=jumlah%20kes%20sembuh%20(discaj)%20baharu
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 # jkn_url = ""; my_date = "2021-05-"
+# jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4013649468728458"; my_date = "2021-05-09"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4011095628983842"; my_date = "2021-05-08"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4007248039368601"; my_date = "2021-05-07"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/4004179083008830"; my_date = "2021-05-06"
@@ -54,6 +55,7 @@ library(stringr)
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3905257032901036"; my_date = "2021-04-03"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3901435533283186"; my_date = "2021-04-02"
 # jkn_url = "https://web.facebook.com/HealthofKelantan/posts/3897856060307800"; my_date = "2021-04-01"
+
 
 # Read
 jkn_url = str_replace(jkn_url, "web", "m")  # replace web with m, easy to scrape
