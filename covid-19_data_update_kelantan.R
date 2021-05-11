@@ -18,7 +18,7 @@ data_kel_all = data_kel_rest
 data_kel_all$recover = data_kel_recover$recover
 data_kel_all$total_recover = (baseline$total_recover-baseline$recover) + cumsum(data_kel_all$recover)
 # row.names(data_kel_all) = 1:nrow(data_kel_all)  # if we want new row numbers
-# but keep as it is fro easy cross ref with "covid-19_my_state.csv"
+# but keep as it is for easy cross ref with "covid-19_my_state.csv"
 data_kel_all
 # it seems that starting from April 13, adding new recovered cases does not tally with
 # total recovered cases reported in FB page, could be miscounting from JKN Kelantan side?
