@@ -53,7 +53,8 @@ library(plotly)
 ## Data
 Sourced from local datasets.
 ```{r, message=FALSE}
-mys_data = read_csv("https://raw.githubusercontent.com/wnarifin/covid-19-kelantan/main/covid-19_kel.csv") %>% rename(Date = "date")
+mys_data = read_csv("covid-19_kel.csv") %>% rename(Date = "date")
+# mys_data = read_csv("https://raw.githubusercontent.com/wnarifin/covid-19-kelantan/main/covid-19_kel.csv") %>% rename(Date = "date")
 # rename date to Date for compatibility with original codes
 
 # add active variable
@@ -136,8 +137,8 @@ Day        = 1:(length(Date))
 parameters_values = c(1/2, 1/14)
 # parameters_values = c(0.273, 0.033)
 parameters_values_lower = c(0.1, 0.01)
-# parameters_values_upper = c(0.35, 0.07)
-parameters_values_upper = c(1, 0.1)
+# parameters_values_upper = c(0.35, 0.07)  # max gamma 0.7 i.e. 14 days
+parameters_values_upper = c(0.5, 0.1)  # allows freedom in parameter space exploration
 
 # Placeholder to find optimal susceptible population
 max_step = 7   # 7 seems sufficient
