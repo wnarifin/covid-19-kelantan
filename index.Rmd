@@ -243,7 +243,7 @@ colors = c("Susceptible" = "black", "Recovered" = "green", "Infectious" = "red",
 fitplot1 = ggplot(fitted_projected, aes(x = Date)) + geom_line(aes(y = I, color = "Infectious")) + 
   geom_point(aes(y = A, color = "Observed Active")) + geom_line(aes(y = R, color = "Recovered")) + 
   geom_point(aes(y = Rm, color = "Observed Recovered")) +
-  labs(y = "Number of cases", title = paste("COVID-19 SIR model Malaysia, fitted and observed", name),
+  labs(y = "Number of cases", title = paste("COVID-19 SIR model Kelantan, fitted and observed", name),
        subtitle = paste("Projection from data:", start_date, "to", fitted_projected$Date[max(Day)]),
        color = paste0("Model fit:\n",
                       "R square (I) = ", round(R2_1,3), "\n",
@@ -265,7 +265,7 @@ fitplot1
 fitplot1_log = ggplot(fitted_projected, aes(x = Date)) + geom_line(aes(y = I, color = "Infectious")) + 
   geom_point(aes(y = A, color = "Observed Active")) + geom_line(aes(y = R, color = "Recovered")) + 
   geom_point(aes(y = Rm, color = "Observed Recovered")) + scale_y_log10() + 
-  labs(y = "Number of cases", title = paste("COVID-19 SIR model Malaysia, fitted and observed,", name, "log10"),
+  labs(y = "Number of cases", title = paste("COVID-19 SIR model Kelantan, fitted and observed,", name, "log10"),
        subtitle = paste("Projection from data:", start_date, "to", fitted_projected$Date[max(Day)]),
        color = paste0("Model fit:\n",
                       "R square (I) = ", round(R2_1,3), "\n",
@@ -326,7 +326,7 @@ sirplot1 = ggplot(fitted_projected, aes(x = Date)) +
   scale_y_continuous(labels = scales::comma) +
   scale_x_date(date_breaks = "14 day", date_labels = "%d/%m/%y") + 
   scale_colour_manual(values = colors) +
-  labs(y = "Number of cases", title = paste("COVID-19 SIR model Malaysia,", name), 
+  labs(y = "Number of cases", title = paste("COVID-19 SIR model Kelantan,", name), 
        subtitle = paste("Projection from data:", start_date, "to", fitted_projected$Date[max(Day)]),
        color = paste0("Model fit:\n",
                       "R square (I) = ", round(R2_1,3), "\n",
@@ -363,7 +363,7 @@ sirplot1_log = ggplot(fitted_projected, aes(x = Date)) +
   scale_y_log10(labels = scales::comma) +
   scale_x_date(date_breaks = "14 day", date_labels = "%d/%m/%y") + 
   scale_colour_manual(values = colors) +
-  labs(y = "Number of cases", title = paste("COVID-19 SIR model Malaysia,", name, "log10"), 
+  labs(y = "Number of cases", title = paste("COVID-19 SIR model Kelantan,", name, "log10"), 
        subtitle = paste("Projection from data:", start_date, "to", fitted_projected$Date[max(Day)]),
        color = paste0("Model fit:\n",
                       "R square (I) = ", round(R2_1,3), "\n",
@@ -458,7 +458,7 @@ sirplot2 = ggplot(fitted_projected, aes(x = Date)) +
   scale_y_continuous(labels = scales::comma) +
   scale_x_date(date_breaks = "14 day", date_labels = "%d/%m/%y") + 
   scale_colour_manual(values = colors) +
-  labs(y = "Number of cases", title = paste("COVID-19 SIR model Malaysia,", name), 
+  labs(y = "Number of cases", title = paste("COVID-19 SIR model Kelantan,", name), 
        subtitle = paste("Projection from data:", start_date, "to", fitted_projected$Date[max(Day)]),
        color = paste0("Model fit:\n",
                       "R square (I) = ", round(R2_1,3), "\n",
@@ -510,7 +510,7 @@ sirplot2_log = ggplot(fitted_projected, aes(x = Date)) +
   scale_y_log10(labels = scales::comma) +
   scale_x_date(date_breaks = "14 day", date_labels = "%d/%m/%y") + 
   scale_colour_manual(values = colors) +
-  labs(y = "Number of cases", title = paste("COVID-19 SIR model Malaysia,", name), 
+  labs(y = "Number of cases", title = paste("COVID-19 SIR model Kelantan,", name), 
        subtitle = paste("Projection from data:", start_date, "to", fitted_projected$Date[max(Day)]),
        color = paste0("Model fit:\n",
                       "R square (I) = ", round(R2_1,3), "\n",
