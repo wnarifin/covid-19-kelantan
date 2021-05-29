@@ -17,6 +17,7 @@ library(stringr)
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 
 # jkn_url = ""; my_date = "2021-05-"
+# jkn_url = "https://m.facebook.com/HealthofKelantan/posts/4077089929051078"; my_date = "2021-05-29"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4074073062686098"; my_date = "2021-05-28"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4070791336347604"; my_date = "2021-05-27"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4067559863337418"; my_date = "2021-05-26"
@@ -79,6 +80,7 @@ library(stringr)
 
 # Read
 jkn_url = str_replace(jkn_url, "web", "m")  # replace web with m, easy to scrape
+jkn_url = str_replace(jkn_url, "www", "m")  # replace web with m, easy to scrape
 jkn_page = try(read_html(jkn_url), T)
 str(jkn_page)  # make sure html page is loaded, not error
 
