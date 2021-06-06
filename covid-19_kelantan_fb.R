@@ -17,6 +17,7 @@ library(stringr)
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 
 # jkn_url = ""; my_date = "2021-06-"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4100630080030396"; my_date = "2021-06-06"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4098277236932347"; my_date = "2021-06-05"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4095469310546473"; my_date = "2021-06-04"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4092299590863445"; my_date = "2021-06-03"
