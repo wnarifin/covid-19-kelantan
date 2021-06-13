@@ -17,6 +17,9 @@ library(stringr)
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 
 # jkn_url = ""; my_date = "2021-06-"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4120644184695652"; my_date = "2021-06-13"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4118471091579628"; my_date = "2021-06-12"
+# starting from 12/6, FB JKNK no longer publish recovery in text format, only in infographic. 
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4115100038583400"; my_date = "2021-06-11"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4112281778865226"; my_date = "2021-06-10"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4109330649160339"; my_date = "2021-06-09"
@@ -114,6 +117,10 @@ loc1 = grep("Jumlah Kes Sembuh.*Baharu", my_text_split, ignore.case = T, perl = 
 # my_text_split1 = str_split(my_text_split[loc1], "[:] ", simplify = T)
 my_text_split1 = str_split(my_text_split[loc1], "[:]", simplify = T)
 sembuh = as.numeric(my_text_split1[1,2]); sembuh
+
+# temps, to use OCR
+# sembuh = 396  # 2021-06-13
+# sembuh = 328  # 2021-06-12
 
 # Read data
 data_kel = data.frame(date=as.Date(my_date), recover=sembuh); data_kel
