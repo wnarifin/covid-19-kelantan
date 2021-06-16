@@ -2,6 +2,8 @@
 
 # Data from KPK
 library(rvest)
+library(tesseract)
+library(magick)
 library(stringr)
 library(xlsx)
 library(readxl)
@@ -17,6 +19,7 @@ library(stringr)
 # https://web.facebook.com/page/711798172246954/search/?q=RINGKASAN%20SITUASI%20TERKINI%20COVID-19
 
 # jkn_url = ""; my_date = "2021-06-"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4128597293900341"; my_date = "2021-06-16"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4125810847512319"; my_date = "2021-06-15"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4123438007749603"; my_date = "2021-06-14"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4120644184695652"; my_date = "2021-06-13"
@@ -107,6 +110,8 @@ my_text = html_nodes(jkn_page, "div")
 # html_text(my_text)
 # str(my_text)
 
+# Before 2021-06-12 ====
+if (my_date <= "2021-06-12") {
 # Recover
 loc = grep("Sembuh.*Baharu", html_text(my_text), ignore.case = T, perl = T)
 # loc = grep("RINGKASAN SITUASI TERKINI COVID-19 DI KELANTAN", html_text(my_text), ignore.case = T, perl = T)
@@ -119,12 +124,33 @@ loc1 = grep("Jumlah Kes Sembuh.*Baharu", my_text_split, ignore.case = T, perl = 
 # my_text_split1 = str_split(my_text_split[loc1], "[:] ", simplify = T)
 my_text_split1 = str_split(my_text_split[loc1], "[:]", simplify = T)
 sembuh = as.numeric(my_text_split1[1,2]); sembuh
+} else {
+# After 2021-06-12 ====
 
 # temps, to use OCR
 # sembuh = 295  # 2021-06-15
 # sembuh = 319  # 2021-06-14
 # sembuh = 396  # 2021-06-13
 # sembuh = 328  # 2021-06-12
+
+# OCR
+# Read image, from folder
+# try to code read img from link later
+# my_date = "2021-06-12"
+img_data = image_read(paste0("recover_data_state/img_kel/", my_date, ".jpg"))
+# Read for Kelantan
+# img 842x842
+# size 80x22 at pixel left upper 200,348
+img_data_kelantan = img_data %>% image_scale("842x842") %>% image_crop("130x50+580+345") %>% 
+  image_convert(colorspace = "gray") %>% image_negate()
+img_data_kelantan
+# OCR
+recover_data_kelantan = image_ocr(img_data_kelantan) %>% str_extract_all("[:digit:]", simplify = T) %>%
+  str_c(collapse = "") %>% as.numeric()
+recover_data_kelantan
+sembuh = recover_data_kelantan
+}
+sembuh
 
 # Read data
 data_kel = data.frame(date=as.Date(my_date), recover=sembuh); data_kel
