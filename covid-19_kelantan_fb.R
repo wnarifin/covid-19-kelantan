@@ -24,7 +24,7 @@ library(stringr)
 # jkn_url = ""; my_date = "2021-07-"
 # jkn_url = ""; my_date = "2021-07-"
 # jkn_url = ""; my_date = "2021-07-"
-# jkn_url = ""; my_date = "2021-07-"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4219020508191352"; my_date = "2021-07-18"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4216345808458822"; my_date = "2021-07-17"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4213542592072477"; my_date = "2021-07-16"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4210328702393866"; my_date = "2021-07-15"
