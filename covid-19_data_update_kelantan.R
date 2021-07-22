@@ -16,11 +16,15 @@ data_kel_rest$recover = NA
 data_kel_rest$total_recover = NA
 data_kel_all = data_kel_rest
 data_kel_all$recover = data_kel_recover$recover
+# calculate for 20/7 and 21/7 bcs the data is missing
+# (total recover 22/7 - recover on 22/7 - total recover 19/7)/2
+recover_20_21_7 = (36124-226-34236)/2
+data_kel_all$recover[data_kel_all$date == "2021-07-20" | data_kel_all$date == "2021-07-21"] = recover_20_21_7
 data_kel_all$total_recover = (baseline$total_recover-baseline$recover) + cumsum(data_kel_all$recover)
-if (is.na(data_kel_recover$recover[nrow(data_kel_all)])) {
-  data_kel_all$total_recover[nrow(data_kel_all)] = data_kel_all$total_recover[nrow(data_kel_all)-1]
-  # replace with prev day sum, but maintain NA for daily count to indicate it is not available
-}
+# if (is.na(data_kel_recover$recover[nrow(data_kel_all)])) {
+#   data_kel_all$total_recover[nrow(data_kel_all)] = data_kel_all$total_recover[nrow(data_kel_all)-1]
+#   # replace with prev day sum, but maintain NA for daily count to indicate it is not available
+# }
 # row.names(data_kel_all) = 1:nrow(data_kel_all)  # if we want new row numbers
 # but keep as it is for easy cross ref with "covid-19_my_state.csv"
 data_kel_all
