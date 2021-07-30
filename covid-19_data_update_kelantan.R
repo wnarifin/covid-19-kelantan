@@ -8,6 +8,7 @@ baseline = read.csv(header = T, text = '
 baseline$date = as.Date(baseline$date)
 
 data_kel_recover = read.csv("covid-19_recover_kel.csv")
+# data_kel_recover = data_kel_recover[-nrow(data_kel_recover),]
 data_my_state = read.csv("covid-19_my_state.csv")
 # data_my_state = read.csv("https://wnarifin.github.io/covid-19-malaysia/covid-19_my_state.csv")
 data_my_state$date = as.Date(data_my_state$date)

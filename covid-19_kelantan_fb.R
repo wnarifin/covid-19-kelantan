@@ -1,4 +1,4 @@
-# Web Scape Facebook JKN Kelantan 
+# Web Scape Facebook JKN Kelantan
 
 # Data from KPK
 library(rvest)
@@ -22,12 +22,13 @@ library(stringr)
 # jkn_url = ""; my_date = "2021-07-"
 # jkn_url = ""; my_date = "2021-07-"
 # jkn_url = ""; my_date = "2021-07-"
-# jkn_url = ""; my_date = "2021-07-"
-# jkn_url = ""; my_date = "2021-07-"
-# jkn_url = ""; my_date = "2021-07-"
-# jkn_url = ""; my_date = "2021-07-"
-# jkn_url = ""; my_date = "2021-07-"
-# jkn_url = ""; my_date = "2021-07-23" # NA
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4251915261568543"; my_date = "2021-07-29"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4248688085224594"; my_date = "2021-07-28"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4246192235474179"; my_date = "2021-07-27"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4242715365821866"; my_date = "2021-07-26"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4239914272768642"; my_date = "2021-07-25"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4237802766313126"; my_date = "2021-07-24"
+# jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4234509936642409"; my_date = "2021-07-23"
 # jkn_url = "https://www.facebook.com/HealthofKelantan/posts/4231109706982432"; my_date = "2021-07-22"
 # jkn_url = ""; my_date = "2021-07-21" # NA
 # jkn_url = ""; my_date = "2021-07-20" # NA
